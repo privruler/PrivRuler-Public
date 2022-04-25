@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/test_aws_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Test AWS" />
+
+    <Button
+        android:id="@+id/test_azure_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/test_aws_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Test Azure" />
+
+    <Button
+        android:id="@+id/test_alibaba_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/test_azure_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Test Alibaba" />
+</android.widget.RelativeLayout>

@@ -1,0 +1,3 @@
+if we are going to analyze android frmework, we need to get the un-stubbed version of android.jar. Android API 3~17 are provided under: https://github.com/Sable/android-platforms
+
+As we are focusing on app analysis, the stubbed version of Android.jar should be enough.
