@@ -8,6 +8,8 @@ import com.alibaba.sdk.android.oss.model.DeleteObjectResult;
 import com.alibaba.sdk.android.oss.model.GetBucketInfoRequest;
 import com.alibaba.sdk.android.oss.model.GetObjectRequest;
 import com.alibaba.sdk.android.oss.model.GetObjectResult;
+import com.alibaba.sdk.android.oss.model.InitiateMultipartUploadRequest;
+import com.alibaba.sdk.android.oss.model.InitiateMultipartUploadResult;
 import com.alibaba.sdk.android.oss.model.ListBucketsRequest;
 import com.alibaba.sdk.android.oss.model.ListBucketsResult;
 import com.alibaba.sdk.android.oss.model.OSSBucketSummary;
@@ -65,8 +67,10 @@ public class OSSTest {
 			}
 			
 			try {
-				PutObjectRequest request = new PutObjectRequest(bucketName, this.randomUUID, "".getBytes());
-				ossClient.putObject(request);
+				InitiateMultipartUploadRequest initRequest =
+						new InitiateMultipartUploadRequest(bucketName, randomUUID);
+				InitiateMultipartUploadResult initResponse =
+						ossClient.initMultipartUpload(initRequest);
 				this.credProfile.capabilityMap.get("putObject").add(bucketName);
 			} catch (Exception e) {
 				StringUtils.logException(e);
