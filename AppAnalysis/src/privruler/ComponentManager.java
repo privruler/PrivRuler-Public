@@ -31,10 +31,10 @@ import soot.jimple.StringConstant;
 import soot.jimple.infoflow.android.axml.AXmlAttribute;
 import soot.jimple.infoflow.android.axml.AXmlNode;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
-//import soot.jimple.infoflow.android.manifest.binary.BinaryManifestActivity;
-//import soot.jimple.infoflow.android.manifest.binary.BinaryManifestBroadcastReceiver;
-//import soot.jimple.infoflow.android.manifest.binary.BinaryManifestContentProvider;
-//import soot.jimple.infoflow.android.manifest.binary.BinaryManifestService;
+import soot.jimple.infoflow.android.manifest.binary.BinaryManifestActivity;
+import soot.jimple.infoflow.android.manifest.binary.BinaryManifestBroadcastReceiver;
+import soot.jimple.infoflow.android.manifest.binary.BinaryManifestContentProvider;
+import soot.jimple.infoflow.android.manifest.binary.BinaryManifestService;
 import soot.util.HashMultiMap;
 import soot.util.MultiMap;
 
@@ -143,10 +143,10 @@ public class ComponentManager {
 		try {
 			ProcessManifest processManifest = new ProcessManifest(apkPath);
 			
-			//Iterator<BinaryManifestActivity> activityIterator = processManifest.getActivities().iterator();
-			//while (activityIterator.hasNext()) {
-			//	AXmlNode nd = activityIterator.next().getAXmlNode();
-			for (AXmlNode nd : processManifest.getActivities()) {
+			Iterator<BinaryManifestActivity> activityIterator = processManifest.getActivities().iterator();
+			while (activityIterator.hasNext()) {
+				AXmlNode nd = activityIterator.next().getAXmlNode();
+			//for (AXmlNode nd : processManifest.getActivities()) {
 				ComponentModel comp = new ComponentModel(fileName, Globals.PACKAGE_NAME, COMPONENT_TYPE.ACTIVITY);
 				parseComponent(nd, comp);
 				if (comp.getName() != null) {
@@ -155,10 +155,10 @@ public class ComponentManager {
 			}
 			
 			
-			//Iterator<BinaryManifestService> serviceIterator = processManifest.getServices().iterator();
-			//while (serviceIterator.hasNext()) {
-			//	AXmlNode nd = serviceIterator.next().getAXmlNode();
-			for (AXmlNode nd : processManifest.getServices()) {
+			Iterator<BinaryManifestService> serviceIterator = processManifest.getServices().iterator();
+			while (serviceIterator.hasNext()) {
+				AXmlNode nd = serviceIterator.next().getAXmlNode();
+			//for (AXmlNode nd : processManifest.getServices()) {
 				ComponentModel comp = new ComponentModel(fileName, Globals.PACKAGE_NAME, COMPONENT_TYPE.SERVICE);
 				parseComponent(nd, comp);
 				if (comp.getName() != null) {
@@ -166,10 +166,10 @@ public class ComponentManager {
 				}
 			}
 			
-			//Iterator<BinaryManifestBroadcastReceiver> receiverIterator = processManifest.getBroadcastReceivers().iterator();
-			//while (receiverIterator.hasNext()) {
-			//	AXmlNode nd = receiverIterator.next().getAXmlNode();
-			for (AXmlNode nd : processManifest.getReceivers()) {
+			Iterator<BinaryManifestBroadcastReceiver> receiverIterator = processManifest.getBroadcastReceivers().iterator();
+			while (receiverIterator.hasNext()) {
+				AXmlNode nd = receiverIterator.next().getAXmlNode();
+			//for (AXmlNode nd : processManifest.getReceivers()) {
 				ComponentModel comp = new ComponentModel(fileName, Globals.PACKAGE_NAME, COMPONENT_TYPE.RECEIVER);
 				parseComponent(nd, comp);
 				if (comp.getName() != null) {
@@ -177,10 +177,10 @@ public class ComponentManager {
 				}
 			}
 			
-			//Iterator<BinaryManifestContentProvider> providerIterator = processManifest.getContentProviders().iterator();
-			//while (providerIterator.hasNext()) {
-			//	AXmlNode nd = providerIterator.next().getAXmlNode();
-			for (AXmlNode nd : processManifest.getProviders()) {
+			Iterator<BinaryManifestContentProvider> providerIterator = processManifest.getContentProviders().iterator();
+			while (providerIterator.hasNext()) {
+				AXmlNode nd = providerIterator.next().getAXmlNode();
+			//for (AXmlNode nd : processManifest.getProviders()) {
 				ComponentModel comp = new ComponentModel(fileName, Globals.PACKAGE_NAME, COMPONENT_TYPE.PROVIDER);
 				parseComponent(nd, comp);
 				if (comp.getName() != null) {

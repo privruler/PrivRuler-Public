@@ -18,7 +18,7 @@ import soot.toolkits.scalar.Pair;
 
 // global settings
 public class Globals {
-	public static final boolean RUN_IN_ECLIPSE = true;
+	public static final boolean RUN_IN_ECLIPSE = false;
 
 	public static Map<String, Integer> RETURN_IN_PARAMS = new HashMap<String, Integer>();
 	static {

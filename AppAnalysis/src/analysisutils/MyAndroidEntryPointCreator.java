@@ -15,8 +15,8 @@ import soot.toolkits.scalar.Pair;
 public class MyAndroidEntryPointCreator extends AndroidEntryPointCreator {
 
 	public MyAndroidEntryPointCreator(
-			/*@SuppressWarnings("rawtypes") IManifestHandler manifest, Collection<SootClass> components*/
-			ProcessManifest manifest, Collection<SootClass> components) {
+			@SuppressWarnings("rawtypes") IManifestHandler manifest, Collection<SootClass> components
+			/*ProcessManifest manifest, Collection<SootClass> components*/) {
 		super(manifest, components);
 		this.createEmptyMainMethod();
 	}
@@ -29,8 +29,8 @@ public class MyAndroidEntryPointCreator extends AndroidEntryPointCreator {
 			try {
 				SootClass c = Scene.v().forceResolve(entry_item.getO1(), SootClass.BODIES);
 				SootMethod m = c.getMethod(entry_item.getO2());
-				//Local localVal = generateClassConstructor(c);
-				Local localVal = generateClassConstructor(c, ret.getActiveBody());
+				Local localVal = generateClassConstructor(c);
+				//Local localVal = generateClassConstructor(c, ret.getActiveBody());
 				if (localVal == null)
 					continue;
 				localVarsForClasses.put(c, localVal);

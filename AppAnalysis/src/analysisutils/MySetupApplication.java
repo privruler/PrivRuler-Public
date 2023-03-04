@@ -9,8 +9,8 @@ import soot.Scene;
 import soot.SootClass;
 import soot.jimple.infoflow.android.InfoflowAndroidConfiguration;
 import soot.jimple.infoflow.android.SetupApplication;
-import soot.jimple.infoflow.android.callbacks.CallbackDefinition;
-//import soot.jimple.infoflow.android.callbacks.AndroidCallbackDefinition;
+//import soot.jimple.infoflow.android.callbacks.CallbackDefinition;
+import soot.jimple.infoflow.android.callbacks.AndroidCallbackDefinition;
 import soot.jimple.infoflow.android.resources.LayoutFileParser;
 import soot.jimple.infoflow.android.source.AccessPathBasedSourceSinkManager;
 import soot.jimple.infoflow.sourcesSinks.manager.ISourceSinkManager;
@@ -49,9 +49,9 @@ public class MySetupApplication extends SetupApplication {
 	}
 
 	@Override
-	public ISourceSinkManager createSourceSinkManager(/*LayoutFileParser lfp, Set<AndroidCallbackDefinition> callbacks*/
+	public ISourceSinkManager createSourceSinkManager(LayoutFileParser lfp, Set<AndroidCallbackDefinition> callbacks/*
 			LayoutFileParser lfp,
-            Set<CallbackDefinition> callbacks) {
+            Set<CallbackDefinition> callbacks*/) {
 
 		Map userControlsByID;
 		Set sources = this.sourceSinkProvider.getSources();
