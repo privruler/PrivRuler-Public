@@ -4,7 +4,10 @@ PrivRuler has two key components: 1) AppAnalysis: a static app analysis componen
 For more details, please refer to our manuscript: "Credit Karma: Understanding Security Implications of Exposed Cloud Services through Automated Capability Inference" in [here](https://github.com/privruler/PrivRuler-Public).
 
 #### Prerequisites
-There is no special requirements to run the code as long as you have JDK 8+ and Android Studio installed. 
+- JDK 8
+- Android Studio
+- Android platform tools (e.g., adb)
+- Android emulator or device of API Level < 30 (Recommended 28).
 
 #### Setup
 You could follow the following steps to run AppAnalysis.
@@ -24,7 +27,7 @@ And use the following steps to run CloudProbe, once the AppAnalysis result is re
   - Follow the instructions on the app's UI, and the probe results will be ready in /sdcard/AWSSummaries, /sdcard/AzureSummaries and /sdcard/AlibabaSummaries, depending on which cloud service you plan to test. 
 
 ## Disclaimer
-The tool is only a prototype for analyzing mobile apps and their cloud service usages. None of the authors is connected in any way with a mobile platform vendor (e.g., Google) or cloud service vendor (e.g., Alibaba, AWS, Azure). The tool is also not effectively peer reviewed, and may lead to unexpected errors or even potential harms to the cloud backends. Please use it at your own risk. 
+The tool is only a prototype for analyzing mobile apps and their cloud service usages. None of the authors is connected in any way with a mobile platform vendor (e.g., Google) or cloud service vendor (e.g., Alibaba, AWS, Azure) when this work is conducted. The tool is also not effectively peer reviewed, and may lead to unexpected errors or even potential harms to the cloud backends. Please use it at your own risk. 
 
 ## Contact
 Anonymized (privruler@gmail.com)
